@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP Generator</title>
+</head>
+<body>
+<h1>Random OTP Generator</h1>
+<button id="generateBtn">Generate OTP</button>
+<p id="otpDisplay"></p>
+
+<script>
+  function generateOTP(length) {
+    let otp = '';
+    let characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    
+    for (let i = 0; i < length; i++) {
+      otp += characters[Math.floor(Math.random() * characters.length)];
+    }
+    
+    return otp;
+  }
+
+  document.getElementById('generateBtn').addEventListener('click', function() {
+    let otp = generateOTP(6); // Generate a 6-digit OTP
+    document.getElementById('otpDisplay').innerText = "Your OTP is: " + otp;
+  });
+</script>
+</body>
+</html>

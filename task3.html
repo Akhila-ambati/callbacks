@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter Odd Numbers</title>
+</head>
+<body>
+<h1>Filter Odd Numbers</h1>
+<button id="filterNumbersBtn">Filter Odd Numbers</button>
+<p id="output"></p>
+
+<script>
+  // Original array
+  let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  // Function to filter out even numbers and display odd numbers
+  function filterOddNumbers() {
+    let oddNumbers = numbers.filter(function(number) {
+      return number % 2 !== 0;
+    });
+
+    // Displaying the result in the DOM
+    document.getElementById('output').innerText = 'Odd Numbers: ' + oddNumbers.join(', ');
+  }
+
+  // Event listener for the button
+  document.getElementById('filterNumbersBtn').addEventListener('click', filterOddNumbers);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter Long Words</title>
+</head>
+<body>
+<h1>Filter Words Longer Than 5 Characters</h1>
+<button id="filterWordsBtn">Filter Words</button>
+<p id="output"></p>
+
+<script>
+  // Original array of words
+  let words = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi", "watermelon"];
+
+  // Function to filter out words longer than 5 characters and display them
+  function filterLongWords() {
+    let filteredWords = words.filter(function(word) {
+      return word.length <= 5;
+    });
+
+    // Displaying the result in the DOM
+    document.getElementById('output').innerText = 'Filtered Words: ' + filteredWords.join(', ');
+  }
+
+  // Event listener for the button
+  document.getElementById('filterWordsBtn').addEventListener('click', filterLongWords);
+</script>
+</body>
+</html>

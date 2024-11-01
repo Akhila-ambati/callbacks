@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Store Cards</title>
+<style>
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+<h1><b>FAKE STORE CARDS</b></h1>
+<div id="cardContainer" class="card-container"></div>
+
+<script>
+  // Sample fake store data
+  const products = [
+    { id: 1, name: "Laptop", price: "$999", description: "High performance laptop." },
+    { id: 2, name: "Smartphone", price: "$599", description: "Latest smartphone model." },
+    { id: 3, name: "Headphones", price: "$199", description: "Noise cancelling headphones." },
+    { id: 4, name: "Watch", price: "$299", description: "Smart watch with various features." }
+  ];
+
+  // Function to create cards and display them
+  function createCards() {
+    const cardContainer = document.getElementById('cardContainer');
+    
+    // Using map method to create card HTML
+    const cards = products.map(product => {
+      return `
+        <div class="card">
+          <h2>${product.name}</h2>
+          <p>${product.price}</p>
+          <p>${product.description}</p>
+        </div>
+      `;
+    }).join(''); // Join to create a single string of HTML
+
+    // Insert cards into the DOM
+    cardContainer.innerHTML = cards;
+  }
+
+  // Create cards on page load
+  createCards();
+</script>
+</body>
+</html>

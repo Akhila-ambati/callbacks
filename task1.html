@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Double the Numbers</title>
+</head>
+<body>
+<h1>Double the Numbers</h1>
+<button id="doubleNumbersBtn">Double the Numbers</button>
+<p id="output"></p>
+
+<script>
+  // Original array
+  let numbers = [1, 2, 3, 4, 5];
+
+  // Function to double each number and display it
+  function doubleNumbers() {
+    let doubledNumbers = numbers.map(function(number) {
+      return number * 2;
+    });
+
+    // Displaying the result in the DOM
+    document.getElementById('output').innerText = 'Doubled Numbers: ' + doubledNumbers.join(', ');
+  }
+
+  // Event listener for the button
+  document.getElementById('doubleNumbersBtn').addEventListener('click', doubleNumbers);
+</script>
+</body>
+</html>
